@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
+
+:root {
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+
+  /* Core palette — warm parchment + deep ink */
+  --bg: #f9f7f2;
+  --bg-card: #ffffff;
+  --bg-muted: #f2efe8;
+  --border: #e5e0d5;
+  --border-strong: #ccc8be;
+  --ink: #1a1714;
+  --ink-muted: #6b6560;
+  --ink-faint: #9e998f;
+  --accent: #c8692a;       /* terracotta */
+  --accent-hover: #b05a20;
+  --accent-light: #f5ebe1;
+  --success: #2d7a4a;
+  --success-light: #e6f4ec;
+  --danger: #c0392b;
+  --danger-light: #fdf0ee;
+  --warning: #d4850a;
+  --warning-light: #fef6e4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100dvh;
+}
+
+/* Grain overlay for depth */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+}
